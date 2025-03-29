@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 练习2 - 春之韵</title>
+    <style>
+        /* 设置全局字体和背景颜色，使用清新的淡绿色作为背景 */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #e0f7fa;
+            color: #2e7d32;
+            margin: 0;
+            padding: 0;
+        }
+        /* 设置 h1 标题样式，使用春天花朵背景图 */
+        h1 {
+            background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            color: white;
+            padding: 80px 0;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        /* 设置 h2 标题样式，使用嫩黄色作为标题颜色 */
+        h2 {
+            color: #ffeb3b;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        /* 设置 div 内容样式 */
+        div {
+            padding: 0 20px;
+            line-height: 1.6;
+        }
+        /* 设置盒模型样式 */
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            margin: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+        }
+        /* 设置列表样式 */
+        ul {
+            list-style-type: none;
+            padding: 0 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        ul li[style*="display: inline"] {
+            margin-right: 10px;
+        }
+        /* 设置 flex 容器样式 */
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .flex-container p {
+            background-color: #c8e6c9;
+            border: 1px solid #4caf50;
+            margin-right: 1em;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+            transition: all 0.3s ease;
+        }
+        .flex-container p:hover {
+            background-color: #a5d6a7;
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS基础知识：背景、盒模型、布局、动画 - 春之探索</h1>
+    <h2>CSS 背景</h2>
+    <div>
+        “cascading” 的音标是 <ruby>cascading<rt>/kæˈskeɪdɪŋ/</rt></ruby>。在这充满生机的春天里，CSS 的背景就像
+        大自然的画卷，能为网页增添无限的活力。想象一下，那嫩绿的草地、五彩的花朵，都可以通过 CSS 背景
+        生动地呈现在页面上。
+    </div>
+    <h2>CSS 盒模型</h2>
+    <div class="box">
+        盒模型是 CSS 布局的基石，它就像春天里的小木屋，稳稳地立在那里，定义了元素在页面上的位置和大小。在 CSS 中，每个元素都被看作是一个矩形的盒子，这个盒子由内容、内边距、边框和外边距组成，如同木屋的房间、装饰、围墙和周边的空地。
+    </div>
+    <h2>信息流、display以及position</h2>
+    <ul>
+        <li>列表项目：信息流如同春天里潺潺的溪流，流畅而自然地在页面中流动。</li>
+        <li>列表项目：display 属性就像春天里的魔术师，能让元素以不同的形态展现。</li>
+        <li>列表项目：position 属性则像是春天里的导航员，精准地定位元素的位置。</li>
+    </ul>
+    <ul>
+        <li style="display: inline">列表项目：内联元素如同春天里的小花，点缀在页面的各个角落。</li>
+        <li style="display: inline">列表项目：它们相互依偎，共同构成了页面的美丽风景。</li>
+        <li style="display: inline">列表项目：展现出春天的生机勃勃和灵动之美。</li>
+        <li style="display: none">列表项目：隐藏的元素就像春天里沉睡的种子，等待着合适的时机绽放。</li>
+    </ul>
+    <h2>flex局部</h2>
+    <div class="flex-container">
+        <p>1的点点滴滴的点点滴滴，仿佛是春天里的第一缕阳光，温暖而轻柔地洒在页面上。</p>
+        <p>2的点点滴滴的点点滴滴，如同春天里的微风，轻轻拂过，带来一丝清新和惬意。</p>
+        <p>3的点点滴滴的点点滴滴，恰似春天里的鸟鸣，清脆悦耳，为页面增添了一份生机与活力。</p>
+    </div>
+</body>
+</html>
