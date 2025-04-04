@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 科技风实践</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-blue: #00f3ff;
+            --cyber-purple: #6c00ff;
+            --matrix-green: #00ff9d;
+            --tech-bg: #0a0e14;
+        }
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background: var(--tech-bg);
+            color: #e0e0e0;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .cyber-border {
+            position: relative;
+            background: linear-gradient(135deg, 
+                rgba(0,243,255,0.1) 0%, 
+                rgba(108,0,255,0.1) 100%);
+            border: 1px solid var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0,243,255,0.2);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8rem;
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(45deg, 
+                var(--neon-blue), 
+                var(--cyber-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(0,243,255,0.4);
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--neon-blue), 
+                transparent);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cyber-card {
+            background: rgba(16, 22, 36, 0.8);
+            border: 1px solid var(--matrix-green);
+            padding: 2rem;
+            border-radius: 4px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cyber-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,255,157,0.15);
+        }
+
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                var(--neon-blue), 
+                var(--matrix-green), 
+                var(--cyber-purple));
+            z-index: -1;
+            animation: cyberGlow 3s linear infinite;
+        }
+
+        @keyframes cyberGlow {
+            0% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+            100% { opacity: 0.3; }
+        }
+
+        .matrix-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .matrix-list li {
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid #00ff9d4d;
+            clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+            transition: all 0.3s ease;
+        }
+
+        .matrix-list li:hover {
+            background: rgba(0,255,157,0.05);
+            transform: scale(1.05);
+        }
+
+        .neon-line {
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--neon-blue), 
+                transparent);
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS TECHSPEC</h1>
+    <div class="neon-line"></div>
+
+    <div class="tech-grid">
+        <div class="cyber-card">
+            <h2>BACKGROUND MODULES</h2>
+            <p>线性渐变与粒子效果实现动态背景，支持多层混合模式</p>
+        </div>
+
+        <div class="cyber-card">
+            <h2>BOX ENGINE</h2>
+            <p>三维盒模型系统，支持实时阴影计算与材质效果</p>
+        </div>
+
+        <div class="cyber-card">
+            <h2>LAYOUT MATRIX</h2>
+            <p>智能网格布局系统，自动适应多端显示环境</p>
+        </div>
+    </div>
+
+    <div class="neon-line"></div>
+
+    <ul class="matrix-list">
+        <li>Flex Grid System</li>
+        <li>3D Transform</li>
+        <li>Neon Animation</li>
+    </ul>
+</body>
+</html>

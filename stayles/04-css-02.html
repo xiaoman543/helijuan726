@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+ <html lang="zh">
+   <head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>CSS核心概念：背景、盒模型、布局、动画</title>
+     <style>
+       body {
+         background-color: #f0f0f0;
+       }
+       h1 {
+         background-image: url("./images/780.jpg");
+         background-position: 50% 50%;
+         background-repeat: no-repeat;
+         text-align: center;
+       }
+     </style>
+   </head>
+   <body>
+     <h1>CSS基础知识：背景、盒模型、布局、动画</h1>
+     <h2>CSS 背景</h2>
+     <div>
+         <h2>CSS 布局</h2>
+         <p>
+           <h2>CSS 动画</h2>
+           <div class="animated-box"></div>
+     </div>
+     <h2>CSS 盒模型</h2>
+     </div>
+     <style>
+       .box {
+         width: 200px;
+         height: 200px;
+         border: 2px solid #db7373;
+         padding: 20px;
+         margin-top: 3em;
+         border-radius: 5px;
+       }
+     </style>
+     <h2>信息流、display以及position</h2>
+     <ul>
+       <li>列表项目</li>
+       <li>列表项目</li>
+       <li>列表项目</li>
+     </ul>
+     <ul>
+       <li style="display: inline">列表项目</li>
+       <li style="display: inline">列表项目</li>
+       <li style="display: inline">列表项目</li>
+       <li style="display: none">列表项目</li>
+     </ul>
+     <h2>flex局部</h2>
+     <div class="flex-container">
+       <p>1的点点滴滴的点点滴滴</p>
+       <p>2的点点滴滴的点点滴滴</p>
+       <p>3的点点滴滴的点点滴滴</p>
+     </div> 
+     <style>
+       .flex-container {
+         display: flex;
+         flex-direction: column;
+       }
+       .flex-container p {
+         background-color: #bdaeae;
+         border: 1px solid red;
+         margin-right: 1em;
+         padding: 5px;
+       }
+     </style>
+   </body>
+ </html>
