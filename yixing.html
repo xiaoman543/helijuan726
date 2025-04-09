@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>弈星皮肤画廊 - 王者荣耀</title>
+    <style>
+        :root {
+            --gold: #c7a253;
+            --ink: #2a2a34;
+        }
+
+        body {
+            background: #0a0a0f;
+            font-family: 'Microsoft YaHei', sans-serif;
+            color: #e4d5c4;
+        }
+
+        .skin-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-bottom: 3px solid var(--gold);
+            position: relative;
+        }
+
+        .skin-title {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        /* 图片展示容器 */
+        .skin-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .main-poster {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(199,162,83,0.2);
+        }
+
+        .main-poster img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .main-poster:hover img {
+            transform: scale(1.03);
+        }
+
+        /* 细节展示 */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .detail-shot {
+            height: 150px;
+            border: 2px solid var(--gold);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .detail-shot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- 经典皮肤 -->
+    <section class="skin-container">
+        <h2 class="skin-title">经典皮肤 - 天元之弈</h2>
+        <div class="skin-showcase">
+            <div class="main-poster">
+                <img src="https://img.ka-cn.com/yxzj/hero/yixing/classic.jpg" 
+                     alt="经典皮肤">
+            </div>
+            <div class="details-grid">
+                <div class="detail-shot">
+                    <img src="https://img.ka-cn.com/yxzj/hero/yixing/classic-detail1.jpg" 
+                         alt="技能特效">
+                </div>
+                <div class="detail-shot">
+                    <img src="https://img.ka-cn.com/yxzj/hero/yixing/classic-detail2.jpg" 
+                         alt="棋盘细节">
+                </div>
+                <div class="detail-shot">
+                    <img src="https://img.ka-cn.com/yxzj/hero/yixing/classic-detail3.jpg" 
+                         alt="角色特写">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 踏雪寻梅 -->
+    <section class="skin-container">
+        <h2 class="skin-title">史诗皮肤 - 踏雪寻梅</h2>
+        <div class="skin-showcase">
+            <div class="main-poster">
+                <img src="https://img.ka-cn.com/yxzj/hero/yixing/snow.jpg" 
+                     alt="踏雪寻梅">
+            </div>
+            <div class="details-grid">
+                <div class="detail-shot">
+                    <img src="https://img.ka-cn.com/yxzj/hero/yixing/snow-detail1.jpg" 
+                         alt="梅花特效">
+                </div>
+                <div class="detail-shot">
+                    <img src="https://img.ka-cn.com/yxzj/hero/yixing/snow-detail2.jpg" 
+                         alt="雪景展示">
+                </div>
+                <div class="detail-shot">
+                    <img src="https://img.ka-cn.com/yxzj/hero/yixing/snow-detail3.jpg" 
+                         alt="武器细节">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 滕王阁序 -->
+    <section class="skin-container">
+        <h2 class="skin-title">联动皮肤 - 滕王阁序</h2>
+        <div class="skin-showcase">
+            <div class="main-poster">
+                <img src="https://img.ka-cn.com/yxzj/hero/yixing/pavilion.jpg" 
+                     alt="滕王阁序">
+            </div>
+            <div class="details-grid">
+                <div class="detail-shot">
+                    <img src="https://img.ka-cn.com/yxzj/hero/yixing/pavilion-detail1.jpg" 
+                         alt="书法特效">
+                </div>
+                <div class="detail-shot">
+                    <img src="https://img.ka-cn.com/yxzj/hero/yixing/pavilion-detail2.jpg" 
+                         alt="建筑元素">
+                </div>
+                <div class="detail-shot">
+                    <img src="https://img.ka-cn.com/yxzj/hero/yixing/pavilion-detail3.jpg" 
+                         alt="诗词展示">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

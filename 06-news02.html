@@ -1,0 +1,193 @@
+<!DOCTYPE html> 
+<html lang='zh'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 核心语法学习</title>
+    <style>
+        /* 原有CSS样式保持不变 */
+        :root {
+            --neon-blue: #00f3ff;
+            --dark-bg: #0a0a1a;
+            --cyber-purple: #6a00ff;
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: var(--neon-blue);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 10px var(--neon-blue);
+            position: relative;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 2px solid var(--neon-blue);
+            padding: 1rem;
+            border-radius: 8px;
+            background: linear-gradient(45deg, #000428 0%, #004e92 100%);
+        }
+
+        h1:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--neon-blue);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .cyber-card {
+            background: rgba(0, 0, 50, 0.3);
+            border: 1px solid var(--neon-blue);
+            padding: 1.5rem;
+            border-radius: 10px;
+            position: relative;
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+        }
+
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--cyber-purple));
+            z-index: -1;
+            border-radius: 12px;
+            animation: glow 2s linear infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.3; }
+        }
+
+        .data-field {
+            margin: 1rem 0;
+            padding: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            border-left: 3px solid var(--neon-blue);
+        }
+
+        .console-text {
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            background: #000;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+    </style>
+    <script>
+        // 1. 类定义和对象创建
+        class Student {
+            constructor(name, age, school, grade) {
+                this.name = name;
+                this.age = age;
+                this.school = school;
+                this.grade = grade;
+            }
+
+            learn(subject = "数学") {
+                console.log(`${this.name}正在学习${subject}`, "优秀");
+            }
+        }
+
+        class Undergraduate extends Student {
+            constructor(name, age, school, grade, department) {
+                super(name, age, school, grade);
+                this.department = department;
+            }
+
+            intern(corp) {
+                let 经验值 = 0;
+                console.log(`${this.name}在${corp}实习`, `经验值+${100}`);
+            }
+        }
+
+        // 创建实例
+        let student1 = new Student("张三", 15, "清华大学", "大一");
+        let student2 = new Student("李四", 16, "北京大学", "大二");
+        let student3 = new Student("王五", 17, "复旦大学", "大三");
+        let a = 100;
+
+        let intern1 = new Undergraduate("张三", 15, "清华大学", "大一", "计算机科学与技术");
+        let intern2 = new Undergraduate("李四", 16, "北京大学", "大二", "计算机科学与技术");
+        let intern3 = new Undergraduate("王五", 17, "复旦大学", "大三", "计算机科学与技术");
+
+        // 方法调用
+        student1.learn(); 
+        student2.learn("语文"); 
+        student3.learn("英语");
+        intern1.intern("百度");
+        intern2.intern("腾讯");
+        intern3.intern("阿里巴巴");
+
+        // 可视化展示功能
+        document.addEventListener('DOMContentLoaded', () => {
+            const students = [student1, student2, student3];
+            const interns = [intern1, intern2, intern3];
+            
+            const container = document.createElement('div');
+            container.className = 'container';
+            
+            students.forEach(student => {
+                const card = createCyberCard(student);
+                container.appendChild(card);
+            });
+
+            interns.forEach(intern => {
+                const card = createCyberCard(intern);
+                const dept = document.createElement('div');
+                dept.className = 'data-field';
+                dept.innerHTML = `院系：<span style="color:#ff00ff">${intern.department}</span>`;
+                card.appendChild(dept);
+                container.appendChild(card);
+            });
+
+            document.body.appendChild(container);
+        });
+
+        function createCyberCard(obj) {
+            const card = document.createElement('div');
+            card.className = 'cyber-card';
+            
+            for(const key in obj) {
+                if(key !== 'department') {
+                    const field = document.createElement('div');
+                    field.className = 'data-field';
+                    field.innerHTML = `${key}：<span class="highlight">${obj[key]}</span>`;
+                    card.appendChild(field);
+                }
+            }
+            
+            return card;
+        }
+
+        // 点击特效
+        document.getElementById('demo').onclick = function() {
+            this.style.animation = 'none';
+            setTimeout(() => {
+                this.style.animation = 'glow 2s linear infinite';
+            }, 10);
+        }
+    </script>
+</head>
+<body>      
+    <h1 id="demo">JavaScript 核心语法实验室</h1>
+</body>
+</html>
