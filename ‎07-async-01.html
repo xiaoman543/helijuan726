@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 异步编程练习2</title>
+    <style>
+        body {
+            background-image: url('https://i.imgur.com/Y0727gE.jpg'); /* 波西米亚风格背景图 */
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Indie Flower', cursive; /* 手写风格字体 */
+            color: #4b2e00; /* 深棕色文字 */
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ff6b6b; /* 鲜艳的红色标题 */
+            text-align: center;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        table {
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+            border-collapse: collapse;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #bff285;
+            color: #4b2e00;
+        }
+
+        tr:hover {
+            background-color: #ea95cf;
+        }
+
+        /* 新增两栏布局样式 */
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .column {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript 异步编程练习</h1>
+    <div class="container">
+        <div class="column">
+            <!-- 这里可以放第一栏的内容 -->
+        </div>
+        <div class="column">
+            <div id="demo">
+            </div>
+        </div>
+    </div>
+    <script>
+        setTimeout(() => {
+            console.log('111')
+        }, 2000)
+        console.log('222')
+
+        function getSomething() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log('1111')
+                    resolve();
+                }, 1000)
+            })
+        }
+        getSomething().then(() => {
+            console.log('2222')
+        })
+
+        async function getSomething2() {
+            await new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log('111111')
+                    resolve();
+                }, 1000)
+            });
+        }
+
+        (async () => {
+            await getSomething2();
+            console.log('222222');
+        })();
+
+        async function getAllCommitDates(owner, repo) {
+            const url = `https://api.github.com/repos/${owner}/${repo}/commits`;
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('网络响应失败');
+                }
+                const commits = await response.json();
+                // 提取每个提交的日期
+                const dates = commits.map(commit => commit.commit.author.date);
+                return dates;
+            } catch (error) {
+                console.error('获取提交日期失败:', error);
+                return [];
+            }
+        }
+
+        // 示例调用
+        // getAllCommitDates('yangjh-xbmu', 'Web-develop').then(dates => {
+        //     console.log('所有提交日期:', JSON.stringify(dates));
+        // });
+        function showCommitDatesTable(dates) {
+            let html = '<table border="1" cellpadding="5"><tr><th>序号</th><th>提交日期</th></tr>';
+            dates.forEach((date, idx) => {
+                html += `<tr><td>${idx + 1}</td><td>${date}</td></tr>`;
+            });
+            html += '</table>';
+            document.getElementById('demo').innerHTML = html;
+        }
+
+        getAllCommitDates('yangjh-xbmu', 'Web-develop')
+            .then(dates => {
+                console.log('所有提交日期:', JSON.stringify(dates));
+                showCommitDatesTable(dates);
+            });
+    </script>
+</body>
+</html>
+
+    <!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 异步编程练习2</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Short+Stack&display=swap');
+
+        body {
+            background-image: url('https://i.imgur.com/XHnz5qK.png'); /* 云朵卡通背景 */
+            background-size: cover;
+            font-family: 'Comic Neue', 'Short Stack', cursive;
+            color: #6b4c7a; /* 梦幻紫文字 */
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+        }
+
+        h1 {
+            color: #ff85c0; /* 粉红色标题 */
+            text-align: center;
+            font-size: 2.8em;
+            padding: 20px;
+            text-shadow: 2px 2px 0 #fff;
+            animation: bounce 1s infinite alternate;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 25px;
+            padding: 20px;
+        }
+
+        .column {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(255, 131, 192, 0.3);
+            border: 3px solid #ffb3d9;
+            position: relative;
+        }
+
+        .column:first-child::before {
+            content: '✨';
+            position: absolute;
+            font-size: 40px;
+            right: -20px;
+            top: -20px;
+            animation: twinkle 1.5s infinite;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        th {
+            background: linear-gradient(45deg, #ff9ec6, #ff85c0);
+            color: white;
+            font-size: 1.1em;
+            padding: 15px;
+            text-align: center;
+        }
+
+        td {
+            padding: 12px;
+            background: #fff9fc;
+            border-bottom: 2px solid #ffe6f2;
+            text-align: center;
+        }
+
+        tr:hover {
+            background: #ffeff5 !important;
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+
+        tr:nth-child(even) {
+            background: #fff0f7;
+        }
+
+        /* 可爱装饰元素 */
+        .decor-cloud {
+            position: absolute;
+            width: 120px;
+            opacity: 0.8;
+            animation: float 4s infinite;
+        }
+
+        #demo {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 动画效果 */
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* 左侧栏样式 */
+        .tips-list li {
+            list-style-type: '🐾 ';
+            padding: 10px;
+            margin: 8px 0;
+            background: #fff0f7;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .column:first-child::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="https://i.imgur.com/5RWs6zL.png" class="decor-cloud" style="left:10%; top:15%">
+    <img src="https://i.imgur.com/5RWs6zL.png" class="decor-cloud" style="right:5%; top:30%">
+
+    <h1>JavaScript 异步编程练习 🍭</h1>
+    
+    <div class="container">
+        <div class="column">
+            <h3>学习小贴士 🌟</h3>
+            <ul class="tips-list">
+                <li>定时器要记清顺序</li>
+                <li>Promise链式调用最有趣</li>
+                <li>async/await像魔法</li>
+                <li>API调用要小心</li>
+            </ul>
+        </div>
+        
+        <div class="column">
+            <div id="demo"></div>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            console.log('111')
+        }, 2000)
+        console.log('222')
+
+        function getSomething() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log('1111')
+                    resolve();
+                }, 1000)
+            })
+        }
+        getSomething().then(() => {
+            console.log('2222')
+        })
+
+        async function getSomething2() {
+            await new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log('111111')
+                    resolve();
+                }, 1000)
+            });
+        }
+
+        (async () => {
+            await getSomething2();
+            console.log('222222');
+        })();
+
+        async function getAllCommitDates(owner, repo) {
+            const url = `https://api.github.com/repos/${owner}/${repo}/commits`;
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('网络响应失败');
+                }
+                const commits = await response.json();
+                // 提取每个提交的日期
+                const dates = commits.map(commit => commit.commit.author.date);
+                return dates;
+            } catch (error) {
+                console.error('获取提交日期失败:', error);
+                return [];
+            }
+        }
+
+        // 示例调用
+        // getAllCommitDates('yangjh-xbmu', 'Web-develop').then(dates => {
+        //     console.log('所有提交日期:', JSON.stringify(dates));
+        // });
+        function showCommitDatesTable(dates) {
+            let html = '<table border="1" cellpadding="5"><tr><th>序号</th><th>提交日期</th></tr>';
+            dates.forEach((date, idx) => {
+                html += `<tr><td>${idx + 1}</td><td>${date}</td></tr>`;
+            });
+            html += '</table>';
+            document.getElementById('demo').innerHTML = html;
+        }
+
+        getAllCommitDates('yangjh-xbmu', 'Web-develop')
+            .then(dates => {
+                console.log('所有提交日期:', JSON.stringify(dates));
+                showCommitDatesTable(dates);
+            });
+    </script>
+</body>
+</html>
+
+    </script>
+
+</body>
+
+</html>
