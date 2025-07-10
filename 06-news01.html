@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html lang='zh'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 核心语法学习</title>
+    <script>
+        // 1. 定义一个类
+        class Student {
+            // 构造函数
+            constructor(name, age, school, grade) {
+                this.name = name;
+                this.age = age;
+                this.school = school;
+                this.grade = grade;
+            }
+            // 2. 方法
+            learn(subject = "数学") {
+                console.log(`${this.name}正在学习${subject}`, "优秀");
+            }
+        }
+        // 3. 创建对象
+        let student1 = new Student("张三", 15, "清华大学", "大一");
+        let student2 = new Student("李四", 16, "北京大学", "大二");
+        let a = 100;
+        let student3 = new Student("王五", 17, "复旦大学", "大三");
+
+        // 修正对象调用
+        student1.learn(); 
+        student2.learn("语文"); 
+        student3.learn("英语"); 
+
+        // 修正类名拼写
+        class Undergraduate extends Student {
+            constructor(name, age, school, grade, department) {
+                super(name, age, school, grade);
+                this.department = department;
+            }
+            // 定义 intern 方法
+            intern(corp) {
+                let 经验值 = 0;
+                console.log(`${this.name}在${corp}实习`, `经验值+${100}`);
+            }
+        }
+
+        // 修正实例化
+        let intern1 = new Undergraduate("张三", 15, "清华大学", "大一", "计算机科学与技术");
+        let intern2 = new Undergraduate("李四", 16, "北京大学", "大二", "计算机科学与技术");
+        let intern3 = new Undergraduate("王五", 17, "复旦大学", "大三", "计算机科学与技术");
+
+        intern1.intern("百度");
+        intern2.intern("腾讯");
+        intern3.intern("阿里巴巴");
+
+        //回调函数，函数作为参数传递给另一个函数    
+        function greet(name, callback) {
+            console.log(`Hello, ${name}!`);
+            callback(); 
+        }
+        
+        console.log("回调函数示例：");  
+        greet("Alice", function() {
+            console.log("How are you?");
+        });
+        console.log(a);
+    </script>
+</head>
+<body>      
+<h1 id="demo">conclick ="myFunction点我</h1>
+
+
+    
+    <!-- 这里可以添加页面内容 -->
+</body>
+</html>

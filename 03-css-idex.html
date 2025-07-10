@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS魔法练习本</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Comic+Neue:wght@700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #fff0f6 0%, #f8f4ff 100%);
+            font-family: 'Comic Neue', cursive;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-family: 'Cherry Bomb One', cursive;
+            color: #ff69b4;
+            background: linear-gradient(45deg, #ffb3d9, #ffe6f2);
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 8px 15px rgba(255, 105, 180, 0.2);
+            transform: rotate(-2deg);
+            animation: float 3s ease-in-out infinite;
+            border: 3px dashed white;
+        }
+
+        h2 {
+            font-family: 'Cherry Bomb One', cursive;
+            color: #ff85c0;
+            text-shadow: 2px 2px 0 white;
+            margin: 25px 0 15px;
+            font-size: 1.8em;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        h2::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            top: -5px;
+            font-size: 1.5em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            position: relative;
+        }
+
+        li {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            border-left: 5px solid #ffb3d9;
+        }
+
+        li:hover {
+            transform: translateX(10px) scale(1.02);
+            background: linear-gradient(90deg, #fff 0%, #fff8fb 100%);
+            box-shadow: 0 6px 12px rgba(255, 105, 180, 0.1);
+        }
+
+        li::before {
+            content: '🌸';
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .decor-cloud {
+            position: absolute;
+            width: 120px;
+            height: 40px;
+            background: white;
+            border-radius: 20px;
+            right: -60px;
+            top: 100px;
+            opacity: 0.8;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .decor-cloud::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: white;
+            border-radius: 50%;
+            left: -15px;
+            top: -15px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(-2deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(-2deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="decor-cloud"></div>
+    <h1>✨ CSS魔法练习本 ✨</h1>
+    <div>
+        <h2>三种神奇样式咒语</h2>
+        <ul>
+            <li><i class="fas fa-magic"></i> 外部样式表</li>
+            <li><i class="fas fa-paint-brush"></i> 内部样式表</li>
+            <li style="color: #6c5ce7; border-left-color: #a8a4f0"><i class="fas fa-sparkles"></i> 内嵌样式表</li>
+        </ul>
+    </div>
+</body>
+</html>

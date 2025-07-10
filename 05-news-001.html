@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 核心语法学习</title>
+    <script>
+        let a = 100;
+        // alert(a)
+        console.log(a);
+        const api_key = "1234567890";
+        console.log(api_key);
+        console.log(typeof a, typeof api_key, typeof true);
+        let b = "hello world";
+        console.log(b + a);
+        console.log(a + Number(b));
+        let c = "100";
+        console.log(a == c);
+        console.log("a === c");
+        // 修正变量拼写
+        let current_time = "5:10";
+        if (current_time === "5:10") {
+            console.log("打王者");
+        } else {
+            console.log("连不上网....");
+            // for 循环
+            for (let i = 8; i <= 20; i++) {
+                console.log(i);
+            }
+        }
+        // while 循环，修正循环条件
+        let win = 3;
+        while (win > 0) {
+            console.log("退出游戏");
+            win = win - 1;
+        }
+        // 函数
+        function intro2(content) {
+            // 修正函数调用
+            console.log(content, "hello world, i am a function");
+            function ab() {
+                console.log("woshiheliya, dengfandelaopo");
+            }
+            return ab;
+        }
+    </script>
+</head>

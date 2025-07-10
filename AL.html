@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>广告学专业求职简历</title>
+    <style>
+        :root {
+            --primary-color: #2B5A8A;
+            --secondary-color: #4A90E2;
+            --accent-color: #FF6B6B;
+        }
+        body {
+            font-family: '微软雅黑', 'Helvetica Neue', sans-serif;
+            background: #F8F9FA;
+            margin: 0;
+            padding: 30px;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+            position: relative;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid var(--secondary-color);
+            object-fit: cover;
+        }
+        .title {
+            font-size: 36px;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+            margin: 0;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 18px;
+            margin-top: 8px;
+        }
+        .info-box {
+            background: #F4F7FC;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+        }
+        .info-item img {
+            width: 20px;
+            margin-right: 10px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+            margin: 30px 0 20px;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin-left: 15px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 2px;
+            height: calc(100% - 20px);
+            background: #E0E0E0;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 25px;
+        }
+        .timeline-item::before {
+            content: '●';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            color: var(--secondary-color);
+            font-size: 20px;
+        }
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tag {
+            background: var(--secondary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .avatar {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1 class="title">王雪瑶</h1>
+                <p class="subtitle">广告策划 | 品牌营销 | 新媒体运营</p>
+                <div class="info-box">
+                    <div class="info-item">
+                        <img src="https://img.icons8.com/ios/50/phone.png" alt="电话">
+                        +86 189-XXXX-XXXX
+                    </div>
+                    <div class="info-item">
+                        <img src="https://img.icons8.com/ios/50/email.png" alt="邮箱">
+                        wangxueyao@email.com
+                    </div>
+                    <div class="info-item">
+                        <img src="https://img.icons8.com/ios/50/linkedin.png" alt="领英">
+                        linkedin.com/in/xueyao
+                    </div>
+                </div>
+            </div>
+            <img src="https://place-ducks.com/200/200" alt="头像" class="avatar">
+        </div>
+
+        <h2 class="section-title">教育背景</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>西北民族大学 广告学专业 <span class="highlight">（GPA 3.7/4.0）</span></h3>
+                <p>2019.09 - 2023.06</p>
+                <ul>
+                    <li>国家级奖学金获得者（2022年广告专业唯一）</li>
+                    <li>主修课程：广告策划、数字营销、消费者行为分析</li>
+                    <li>英语能力：CET-6 598分（口语A级）</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="section-title">项目经验</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>陇原非遗焕新计划 <span class="highlight">（品牌策划）</span></h3>
+                <p>2022.06-2023.01 | 甘肃丝路文化传媒</p>
+                <ul>
+                    <li>策划数字壁画盲盒营销方案，提升合作商家销售额42%</li>
+                    <li>搭建抖音/快手新媒体矩阵，3个月积累粉丝5.3万+</li>
+                    <li>完成12个民族品牌案例分析，建立文化符号年轻化模型</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="section-title">核心技能</h2>
+        <div class="tag-list">
+            <div class="tag">全案策划</div>
+            <div class="tag">数据分析（Python/SPSS）</div>
+            <div class="tag">Adobe创意套件</div>
+            <div class="tag">新媒体矩阵运营</div>
+            <div class="tag">AIGC应用</div>
+        </div>
+
+        <h2 class="section-title">职业规划</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>短期目标（1-3年）</h3>
+                <p>深耕品牌策略执行，考取Google Analytics认证</p>
+            </div>
+            <div class="timeline-item">
+                <h3>长期愿景（5年+）</h3>
+                <p>成为民族文化品牌专家，构建传统文化IP商业化方法论</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
