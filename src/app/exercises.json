@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "title": "汤姆的追逐游戏",
+    "description": "使用 iframe 嵌入一个有趣的猫鼠追逐小游戏，展示了经典的Tom and Jerry互动场景。",
+    "link": "/practice/embed-demo",
+    "imageUrl": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["游戏", "iframe", "追逐"]
+  },
+  {
+    "id": 2,
+    "title": "杰瑞的奶酪收集器",
+    "description": "一个可爱的React应用，帮助杰瑞收集散落在房间里的奶酪，展示组件化开发的魅力。",
+    "link": "/practice/my-app",
+    "imageUrl": "https://images.unsplash.com/photo-1486365227551-f3f90034a57c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["React", "游戏", "奶酪"]
+  },
+  {
+    "id": 3,
+    "title": "汤姆的胡须样式",
+    "description": "学习CSS基础，为汤姆设计各种有趣的胡须样式和颜色搭配。",
+    "link": "/practice/03-css-01",
+    "imageUrl": "https://images.unsplash.com/photo-1574158622682-e40e69881006?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["CSS", "样式", "胡须"]
+  },
+  {
+    "id": 4,
+    "title": "杰瑞的洞穴布局",
+    "description": "使用CSS盒模型为杰瑞设计一个舒适的地下洞穴居住空间。",
+    "link": "/practice/03-css-02",
+    "imageUrl": "https://images.unsplash.com/photo-1425082661705-1834bfd09dca?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["CSS", "布局", "洞穴"]
+  },
+  {
+    "id": 5,
+    "title": "厨房追逐战",
+    "description": "使用CSS浮动和定位技术，重现汤姆和杰瑞在厨房里的经典追逐场面。",
+    "link": "/practice/04-css-01",
+    "imageUrl": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["CSS", "定位", "厨房"]
+  },
+  {
+    "id": 6,
+    "title": "捕鼠器机关设计",
+    "description": "学习相对定位与绝对定位，帮助汤姆设计各种巧妙的捕鼠器机关。",
+    "link": "/practice/04-css-02",
+    "imageUrl": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["CSS", "定位", "机关"]
+  },
+  {
+    "id": 7,
+    "title": "杰瑞的逃跑路线",
+    "description": "深入理解相对定位，设计杰瑞在房间中的最佳逃跑路线图。",
+    "link": "/practice/04-css-02-relative",
+    "imageUrl": "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["CSS", "路线", "逃跑"]
+  },
+  {
+    "id": 8,
+    "title": "汤姆杰瑞日报",
+    "description": "制作一份有趣的汤姆和杰瑞主题报纸，记录他们的日常趣事。",
+    "link": "/practice/05-news01",
+    "imageUrl": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["HTML", "报纸", "日常"]
+  },
+  {
+    "id": 9,
+    "title": "互动恶作剧集锦",
+    "description": "使用JavaScript创建互动式的汤姆杰瑞恶作剧集锦页面。",
+    "link": "/practice/06-news01",
+    "imageUrl": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["JavaScript", "互动", "恶作剧"]
+  },
+  {
+    "id": 10,
+    "title": "猫鼠大战实况",
+    "description": "制作一个动态的猫鼠大战实况报道页面，包含精彩的战斗回放。",
+    "link": "/practice/06-news02",
+    "imageUrl": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["JavaScript", "实况", "大战"]
+  },
+  {
+    "id": 11,
+    "title": "异步奶酪配送",
+    "description": "使用Promise和async/await实现杰瑞的异步奶酪配送系统。",
+    "link": "/practice/07-async-01",
+    "imageUrl": "https://images.unsplash.com/photo-1486365227551-f3f90034a57c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["JavaScript", "异步", "配送"]
+  },
+  {
+    "id": 12,
+    "title": "汤姆的道具API",
+    "description": "使用fetch API获取汤姆各种道具的详细信息和使用说明。",
+    "link": "/practice/07-async-02",
+    "imageUrl": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["JavaScript", "API", "道具"]
+  },
+  {
+    "id": 13,
+    "title": "经典猫鼠首页",
+    "description": "重温经典，展示最初的汤姆和杰瑞动画风格主页设计。",
+    "link": "/practice/index",
+    "imageUrl": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["HTML", "经典", "动画"]
+  }
+] 
